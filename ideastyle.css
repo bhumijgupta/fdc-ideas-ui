@@ -53,73 +53,34 @@ body{
     background: white;
 }
 
-#heroBanner{
-    background: #23599b;
-    color: white;
-    height: 70vh;
-    margin-top: 62px;
-    text-align: center;
-    display: flex;
-}
-
-.container{
-    padding-left: 36px;
-    padding-right: 36px;
-}
-
-.container.my-auto{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-.container img{
-    max-height: 35vh;
-    max-width: 100%;
-}
-
-.container h2{
-    font-size: 1.7em;
-    margin-top: 30px;
-}
-
-
-.container-fluid h1{
-    text-align: center;
-    font-size: 1.7em;
-}
-
 .container-fluid.content{
-    padding: 30px 36px;
+    margin-top: 62px;
+    padding: 36px 30px;
 }
 
-ul{
-    list-style-image: url("media/Light-BG.png");
-    list-style-position: outside;
-}
-
-.list li{
-    margin-top: 25px;
-}
-
-.ideaTitle{
-    font-size: 1.3em;
+.content h1{
+    font-size: 1.7em;
+    text-align: center;
     font-weight: 500;
 }
 
-.ideaTitle a{
+.content .author{
+    margin-top: 30px;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.content a{
     color: #23599b;
 }
 
-.ideaAuthor{
-    font-size: 1.3em;
-    font-weight: 400;
-}
-
-.ideaShort{
-    font-size: 0.9em;
+.content .org{
     color: black;
-    font-weight: 400;
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
+.content .Desc{
+    color: black;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
