@@ -11,7 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="formstyles.css">
+    <link rel="stylesheet" href="styles/formstyles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -43,7 +43,7 @@
         Tell us more!</div>
 
         <!-- form starts -->
-        <form action="/" method="post" id="ideaForm">
+        <form id="ideaForm">
             <div class="form-group">
                 <label for="name">Your Name:</label>
                 <input required type="text" name="name" id="name" class="form-control col-md-5 col-sm-12" minlength="5" placeholder="Maximilian Robert">
@@ -72,7 +72,42 @@
             </div>
             <button type="submit">Submit My Idea <i class="fas fa-angle-right"></i></button>
         </form>
-        <div id="submission-status"></div>
+        <div id="subStatus"><span id="loader"><img src="media/preloader.gif" alt="loading icon"></span></div>
     </div>
+
+    <script>
+        $('#ideaForm').submit(
+        function(e){
+            e.preventDefault();
+            $('button[type="submit"]').hide();
+            $("#loader").show();
+            var form = $("#ideaForm")[0];
+            var formdata = {
+                "name": form[0].value,
+                "email": form[1].value,
+                "club": form[2].value,
+                "title": form[3].value,
+                "desc": form[4].value,
+                "long_desc": form[5].value
+            }
+            $.ajax({
+                url: "http://localhost:3000/idea/submission",
+                method: "POST",
+                data: formdata,
+                success: function(){
+                    $("#loader").hide();
+                    $("#subStatus").html="Form Successfully Submitted";
+                    window.location.href("./index.html");
+                },
+                error: function(){
+                    $("#loader").hide();
+                    $('button[type="submit"]').show();
+                    $("#subStatus").html = "Error Occured! Please try again";
+                    $("#subStatus").css("color", "red");
+                }
+                
+            })
+        })
+    </script>
 </body>
 </html>
