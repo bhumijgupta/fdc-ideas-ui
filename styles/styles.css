@@ -95,7 +95,7 @@ body{
 }
 
 ul{
-    list-style-image: url("media/Light-BG.png");
+    list-style-image: url("../media/Light-BG.png");
     list-style-position: outside;
 }
 
