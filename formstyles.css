@@ -107,3 +107,18 @@ button[type="submit"]{
 	-moz-user-select:none;
 	-ms-user-select:none;
 }
+
+.fas.fa-angle-right{
+    font-size: 1.3em;
+    vertical-align: middle;
+    padding-bottom: 3px;
+    font-weight: 600;
+}
+
+button .fa.fa-angle-right{
+    color: #23599baf;
+}
+
+button:hover .fas.fa-angle-right{
+    color: white;
+}
