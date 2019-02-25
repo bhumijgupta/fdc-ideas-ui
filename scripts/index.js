@@ -1,5 +1,5 @@
 var list = $("ul.list");
-$.getJSON("http://localhost:3000/idea/list", function(data){
+$.getJSON("https://fdcidea.herokuapp.com/idea/list", function(data){
     alldata = data.list;
     alldata.forEach(function(idea){
         var li = $("<li></li>")

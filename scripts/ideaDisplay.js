@@ -1,6 +1,6 @@
 var id = window.location.search.slice(2);
 var container = $("div.content");
-$.getJSON("http://localhost:3000/idea/"+id, function(data){
+$.getJSON("https://fdcidea.herokuapp.com/idea/"+id, function(data){
     idea_data = data.idea[0];
     console.log(idea_data);
     $('<h1 class="col-sm-12">' +idea_data.title+ '</h1>').appendTo(container);
