@@ -84,3 +84,13 @@ body{
     margin-top: 20px;
     font-size: 0.9em;
 }
+
+.loader{
+    padding-top: 60px;
+    display: none;
+}
+
+.loader img{
+    display: block;
+    margin: 0 auto;
+}

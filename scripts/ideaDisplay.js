@@ -1,8 +1,9 @@
 var id = window.location.search.slice(2);
+$('.loader').show();
 var container = $("div.content");
 $.getJSON("https://fdcidea.herokuapp.com/idea/"+id, function(data){
+    $('.loader').hide();
     idea_data = data.idea[0];
-    console.log(idea_data);
     $('<h1 class="col-sm-12">' +idea_data.title+ '</h1>').appendTo(container);
     $('<div class="col-sm-12 author"><a href="mailto:'+idea_data.email+'">' +idea_data.name+ '</a></div>').appendTo(container);
     if(idea_data.club != undefined){

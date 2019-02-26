@@ -72,7 +72,8 @@
             </div>
             <button type="submit">Submit My Idea <i class="fas fa-angle-right"></i></button>
         </form>
-        <div id="subStatus"><span id="loader"><img src="media/preloader.gif" alt="loading icon"></span></div>
+        <div id="subStatus"></div>
+        <div class="loader"><img src="media/Ripple.gif" alt="loading icon"></div>
     </div>
 
     <script>
@@ -80,7 +81,7 @@
         function(e){
             e.preventDefault();
             $('button[type="submit"]').hide();
-            $("#loader").show();
+            $(".loader").show();
             var form = $("#ideaForm")[0];
             var formdata = {
                 "name": form[0].value,
@@ -95,15 +96,18 @@
                 method: "POST",
                 data: formdata,
                 success: function(){
-                    $("#loader").hide();
-                    $("#subStatus").html="Form Successfully Submitted";
-                    window.location.href = "./index.html";
+                    $(".loader").hide();
+                    $("#subStatus").text("Form Successfully Submitted");
+                    setTimeout(function(){
+                        window.location.href = "./index.html";
+                    }, 2000);
                 },
                 error: function(){
-                    $("#loader").hide();
+                    $(".loader").hide();
                     $('button[type="submit"]').show();
-                    $("#subStatus").html = "Error Occured! Please try again";
-                    $("#subStatus").css("color", "red");
+                    $("#subStatus").text("Error Occured! Please try again");
+                    console.log("Form not submitted");
+                    $("#subStatus").css("color", "#ff2c40");
                 }
                 
             })

@@ -1,5 +1,7 @@
 var list = $("ul.list");
+$('.loader').show();
 $.getJSON("https://fdcidea.herokuapp.com/idea/list", function(data){
+    $('.loader').hide();
     alldata = data.list;
     alldata.forEach(function(idea){
         var li = $("<li></li>")

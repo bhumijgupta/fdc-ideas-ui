@@ -123,3 +123,13 @@ ul{
     font-weight: 400;
 }
 
+.loader{
+    padding-top: 60px;
+    display: none;
+}
+
+.loader img{
+    display: block;
+    margin: 0 auto;
+}
+

@@ -129,6 +129,12 @@ button:hover .fas.fa-angle-right{
     font-size: 1.3em;
 }
 
-#loader{
+.loader{
     display: none;
 }
+
+.loader img{
+    height: 100px;
+}
+
+
